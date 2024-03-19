@@ -12,9 +12,10 @@ export default function FeaturedSlide() {
       slidesPerView={3}
       modules={[Autoplay]}
       breakpoints={{
-        320: { slidesPerView: 2, spaceBetween: 15 },
-        650: { slidesPerView: 3, spaceBetween: 15 },
-        960: { slidesPerView: 4, spaceBetween: 15 },
+        320: { slidesPerView: 1, spaceBetween: 15 },
+        650: { slidesPerView: 2, spaceBetween: 15 },
+        960: { slidesPerView: 3, spaceBetween: 15 },
+        1200: { slidesPerView: 4, spaceBetween: 15 },
       }}
       autoplay={{ delay: 4000 }}
       fadeEffect={{ crossFade: true }}
@@ -26,7 +27,7 @@ export default function FeaturedSlide() {
         .filter((house) => house.featured === true)
         .map((house) => (
           <SwiperSlide key={house.id}>
-            <ProductCard key={house.id} {...house} />
+            <ProductCard key={house.id} {...house} full={false} />
           </SwiperSlide>
         ))}
     </Swiper>

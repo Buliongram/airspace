@@ -25,6 +25,7 @@ export default function Contact() {
           </p>
         </div>
       </div>
+      
       <div className="relative px-4 -mt-10 md-20 z-20">
         <form className="bg-white container mx-auto shad p-5 rounded-lg grid md:grid-cols-2 w-full max-w-screen-md gap md:gap-5">
           <div className="flex items-center gap-4 md:col-span-2">

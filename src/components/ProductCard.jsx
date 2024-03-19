@@ -14,6 +14,7 @@ export default function ProductCard({
   bathroom,
   bedroom,
   restroom,
+  full,
 }) {
   return (
     <Link
@@ -39,26 +40,31 @@ export default function ProductCard({
           {address}
         </p>
       </div>
-      <div className="flex rounded-full items-center justify-between p-4 md:p-4 bg-white group-hover:bg-orange-500 text-slate-700 group-hover:text-white">
-        <div className="flex items-center gap-[.15rem] text-[.55rem] xl:text-xs md:gap-2">
-          <GiBed />
-          <p className="opacity-70">
-            {bedroom} bedroom{bedroom > 1 ? "s" : ""}
-          </p>
+
+      {full ? (
+        <div className="flex  items-center justify-between p-4 md:p-4 bg-white group-hover:bg-orange-500 text-slate-700 group-hover:text-white">
+          <div className="flex items-center gap-[.15rem] text-l md:text-xs xl:text-xs md:gap-2">
+            <GiBed />
+            <p className="opacity-70">
+              {bedroom} bedroom{bedroom > 1 ? "s" : ""}
+            </p>
+          </div>
+          <div className="flex items-center gap-[.15rem] text-l md:text-xs xl:text-xs md:gap-2">
+            <MdBathtub />
+            <p className="opacity-70">
+              {bathroom} bathroom{bathroom > 1 ? "s" : ""}
+            </p>
+          </div>
+          <div className="flex items-center gap-[.15rem] text-l md:text-xs xl:text-xs md:gap-2">
+            <PiToilet />
+            <p className="opacity-70">
+              {restroom} restroom{restroom > 1 ? "s" : ""}
+            </p>
+          </div>
         </div>
-        <div className="flex items-center gap-[.15rem] text-[.55rem] xl:text-xs md:gap-2">
-          <MdBathtub />
-          <p className="opacity-70">
-            {bathroom} bathroom{bathroom > 1 ? "s" : ""}
-          </p>
-        </div>
-        <div className="flex items-center gap-[.15rem] text-[.55rem] xl:text-xs md:gap-2">
-          <PiToilet />
-          <p className="opacity-70">
-            {restroom} restroom{restroom > 1 ? "s" : ""}
-          </p>
-        </div>
-      </div>
+      ) : (
+        ""
+      )}
     </Link>
   );
 }
